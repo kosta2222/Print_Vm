@@ -1,0 +1,57 @@
+Более подробное описание:
+Импортируем
+from vm_print import b_c, console, vm_proc_print
+
+используем
+console()
+чтобы начать пользовательский ввод до исполнения программы
+и
+vm_proc_print(b_c,locals(),globals())
+вствляем в конце глобального контекста
+или вконце каждой(любой) функции
+***
+Возьмем пример:
+-----------------------------------------------
+from vm_print import b_c, console, vm_proc_print
+import numpy as np
+
+gl=4
+def main_x():
+    console()
+    a=7
+    l=[1,2,3,4]
+    vm_proc_print(b_c,locals(),globals())
+def func():
+     k=9
+     a1=np.zeros((2,7))
+     l2=[1,5,7,9]
+     vm_proc_print(b_c,locals(),globals())
+
+
+
+main_x()
+func()
+-----------------------------------------------
+Zdravstvuite ya sostavitel bait-coda dla etoi programmi
+Dostupnie codi
+r push_i push_str push_fl locals globals locals_len globals_len locals_np_shape globals_np_shape locals_ind_array globals_ind_array locals_dir globals_dir locals_type globals_type locals_help globals_help
+>>>push_str eto_opis_gl  // Произвольная строка
+>>>push_str gl           // id переменной
+>>>globals               // основная команда
+>>>r                     // выполнить
+eto_opis_gl 4
+Локальные vm были закоментированы.
+Zdravstvuite ya sostavitel bait-coda dla etoi programmi
+Dostupnie codi
+r push_i push_str push_fl locals globals locals_len globals_len locals_np_shape globals_np_shape locals_ind_array globals_ind_array locals_dir globals_dir locals_type globals_type locals_help globals_help
+>>>push_str eto_opis_loc_a
+>>>push_str a
+>>>locals
+>>>r
+eto_opis_loc_a 7
+Подобным образом работают остальные байт-коды.Они выводятся
+в пользовательскую консоль.
+Кое-где нужно пушить индекс чтобы узнать значение локальног/глобального
+массивов.Для обьектов применимы операции shape(numpy),
+документация(help) и список атрибутов(dir).
+Скрипт можно положить в PYTHONPATH.

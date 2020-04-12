@@ -1,0 +1,8 @@
+.idea/
+__pycache__/
+venv/
+Makefile
+build/
+dist/
+nbproject/
+   
